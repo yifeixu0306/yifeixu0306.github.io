@@ -1,0 +1,36 @@
+---
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+## Academic Experience
+
+
+
+
+<hr />
+
+## Professional Experience
+
+**Pfizer (China) R&D Co., Ltd.** [Shanghai, China]{style="float:right"}  
+*Statistical Programming Intern* [*Jun 2022 - Aug 2022*]{style="float:right"}  
+
+-	Engaged in a Phase I study to evaluate the bioequivalence and tolerability of the drug in healthy male subjects and assisted teams in the delivery of statistical programming deliverables  <br>
+
+- Generated datasets (SDTM, ADaM), tables, listings, and figures using SAS and CDARS under the guidance of Clinical Data Interchange Standards Consortium (CDISC) and Pfizer standards, and provided supportive QC work to ensure appropriate documentation for the deliverables
+
+
+
+**Ipsos (China) Consulting Co., Ltd**[Shanghai, China]{style="float:right"}  
+*Healthcare Consulting Intern*[*May 2020 - Jun 2021*]{style="float:right"}                                    
+
+- Deeply participated in 8 healthcare consulting projects with pharmaceutical and medical device companies to determine market access, market size calculation, and competitor project analysis for drugs and medical devices 
+
+- Retrieved industry information through multiple platforms such as literature and databases, proficient in using Excel (v-lookup function, pivot table, thinkcell, etc.) for quantitative data analysis and visualization, and completed project delivery slides
+
+- Designed interview questionnaires, participated in 10 - 20 expert interviews per project, with competitor clients and physicians and summarized notes and insights related to prescription choice, future trends and unmet clinical needs in medical industry
+
+
+
