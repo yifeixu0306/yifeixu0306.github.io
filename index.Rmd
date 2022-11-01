@@ -7,15 +7,15 @@ output:
 ---
 <style>
     body {
-    background: url('background.JPG');
+    background: url("images/background.JPG");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    }
+    font-size: 12pt}
 </style>
     
-<img src="me.JPG" style = "width:55%"/>
+<img src="images/me.JPG" style = "width:50%"/>
 
 **Welcome to my website!**
 
@@ -27,7 +27,7 @@ Hi! My name is Yifei. I am a second year M.S. Biostatistics student in the Mailm
 
 My research interests focus on the statistical analysis for longitudinal data, especially in the area of infection and psychiatry.
 
-I enjoy watching disney movies and playing tennis. My favorite player is [Roger Federer](https://twitter.com/rogerfederer?lang=en)!
+I enjoy watching Disney movies and playing tennis. My favorite player is [Roger Federer](https://twitter.com/rogerfederer?lang=en)!
 
 Learn more about me from [here](About.html)!
 

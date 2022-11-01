@@ -1,9 +1,16 @@
 ---
+title: "About Me"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
+
+<style>
+    body {
+    font-size: 11.5pt}
+</style>
+    
 
 ## Academic Experience
 
@@ -21,6 +28,8 @@ output:
 *	Took the use of surgical methods (uterine binding, hysterectomy, etc.) to treat hemorrhage during delivery as the feature of uterotonics insensitivity, identified age, delivery mode, gestational age, parity, scarred uterus, polyhydramnios, placenta previa, etc. as potential high-risk factors, used SAS to perform logistic regression analysis to determine significant predictors
 *	Constructed a predictive model for uterotonics insensitivity in patients with postpartum hemorrhage, and conducted model diagnostics and validation
 
+
+<hr />
 
 ## Professional Experience
 
