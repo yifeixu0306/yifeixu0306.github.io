@@ -29,7 +29,7 @@ My research interests focus on the statistical analysis for longitudinal data, e
 
 I enjoy watching Disney movies and playing tennis. My favorite player is [Roger Federer](https://twitter.com/rogerfederer?lang=en)!
 
-Learn more about me from [here](About.html)!
+Learn more about me from [here](about.html)!
 
 <hr />
 
