@@ -5,6 +5,17 @@ output:
     toc: false
     toc_float: true
 ---
+<style>
+    body {
+    background: url('background.JPG');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+</style>
+    
+<img src="me.JPG" style = "width:60%" Align = middle/>
 
 **Welcome to my website!**
 
