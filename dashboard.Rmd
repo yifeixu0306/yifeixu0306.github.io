@@ -1,7 +1,39 @@
 ---
-title: "dashboard"
-author: "Yifei Xu"
-date: "2022-11-01"
-output: html_document
+title: "Instacart Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
 ---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+```
+
+### Insracart
+
+#### Read in the data
+
+```{r}
+data("instacart")
+
+instacart = 
+  instacart %>% 
+  as_tibble(instacart)
+```
+
+#### Clean the dataset
+
+```{r}
+
+
+
+```
+
+
+
 
