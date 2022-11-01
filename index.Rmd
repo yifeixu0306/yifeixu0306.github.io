@@ -1,0 +1,31 @@
+---
+title: "Yifei Xu"
+output: 
+  html_document:
+    toc: false
+    toc_float: true
+---
+
+**Welcome to my website!**
+
+<hr />
+
+# About Me
+
+My name is Yifei. I am a second year M.S. Biostatistics student in the Mailman School of Public Health at Columbia University. I earned my B.S. in Pharmaceutical Science from Sichuan University.
+
+My research interests focus on the statistical analysis for longitudinal data, especially in the area of infection and psychiatry.
+
+I enjoy watching disney movies and playing tennis. My favorite player is [Roger Federer](https://twitter.com/rogerfederer?lang=en)!
+
+Learn more about me from here!
+
+<hr />
+
+# Contact
+
+Tel: +1 (929)-217-4848
+
+Email: <yifeixu9836@gmail.com>
+
+
