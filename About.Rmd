@@ -7,30 +7,36 @@ output:
 
 ## Academic Experience
 
+**Evaluation of Efficacy and Safety of Tranexamic Acid in Preventing Postpartum Hemorrhage** [Chengdu, China]{style="float:right"}  
+*Research Assistant, West China School of Pharmacy, Sichuan University* [*Dec 2019 - May 2020*]{style="float:right"}  
 
+* Searched Chinese and English databases to screen randomized controlled trials of tranexamic acid preventing postpartum hemorrhage, and used the Cochrane risk bias assessment tool to evaluate the quality of the included literature
+* Extracted required data on postpartum hemorrhage and tranexamic acid usage and performed Meta-analysis using Revman5.3 and R to quantitatively analyze whether the combined effect values of multiple similar studies were statistically significant
+* According to the evidence of analysis, concluded that tranexamic acid had a certain effectiveness and safety in preventing postpartum hemorrhage, providing basis for clinical medication and medical decision-making 
 
+**Analysis of the Cause of Uterotonics Ineffectiveness in Postpartum Hemorrhage ** [Chengdu, China]{style="float:right"}  
+*Research Assistant, West China Second University Hospital* [*Jul 2019 - Oct 2019*]{style="float:right"}  
 
-<hr />
+* Retrieved postpartum hemorrhage cases between June 2018 and May 2019 and their diagnosis descriptions from patient database of West China Second Hospital
+*	Took the use of surgical methods (uterine binding, hysterectomy, etc.) to treat hemorrhage during delivery as the feature of uterotonics insensitivity, identified age, delivery mode, gestational age, parity, scarred uterus, polyhydramnios, placenta previa, etc. as potential high-risk factors, used SAS to perform logistic regression analysis to determine significant predictors
+*	Constructed a predictive model for uterotonics insensitivity in patients with postpartum hemorrhage, and conducted model diagnostics and validation
+
 
 ## Professional Experience
 
 **Pfizer (China) R&D Co., Ltd.** [Shanghai, China]{style="float:right"}  
 *Statistical Programming Intern* [*Jun 2022 - Aug 2022*]{style="float:right"}  
 
--	Engaged in a Phase I study to evaluate the bioequivalence and tolerability of the drug in healthy male subjects and assisted teams in the delivery of statistical programming deliverables  <br>
-
-- Generated datasets (SDTM, ADaM), tables, listings, and figures using SAS and CDARS under the guidance of Clinical Data Interchange Standards Consortium (CDISC) and Pfizer standards, and provided supportive QC work to ensure appropriate documentation for the deliverables
-
+*	Engaged in a Phase I study to evaluate the bioequivalence and tolerability of the drug in healthy male subjects and assisted teams in the delivery of statistical programming deliverables  <br>
+* Generated datasets (SDTM, ADaM), tables, listings, and figures using SAS and CDARS under the guidance of Clinical Data Interchange Standards Consortium (CDISC) and Pfizer standards, and provided supportive QC work to ensure appropriate documentation for the deliverables
 
 
 **Ipsos (China) Consulting Co., Ltd**[Shanghai, China]{style="float:right"}  
 *Healthcare Consulting Intern*[*May 2020 - Jun 2021*]{style="float:right"}                                    
 
-- Deeply participated in 8 healthcare consulting projects with pharmaceutical and medical device companies to determine market access, market size calculation, and competitor project analysis for drugs and medical devices 
-
-- Retrieved industry information through multiple platforms such as literature and databases, proficient in using Excel (v-lookup function, pivot table, thinkcell, etc.) for quantitative data analysis and visualization, and completed project delivery slides
-
-- Designed interview questionnaires, participated in 10 - 20 expert interviews per project, with competitor clients and physicians and summarized notes and insights related to prescription choice, future trends and unmet clinical needs in medical industry
+* Deeply participated in 8 healthcare consulting projects with pharmaceutical and medical device companies to determine market access, market size calculation, and competitor project analysis for drugs and medical devices 
+* Retrieved industry information through multiple platforms such as literature and databases, proficient in using Excel (v-lookup function, pivot table, thinkcell, etc.) for quantitative data analysis and visualization, and completed project delivery slides
+* Designed interview questionnaires, participated in 10 - 20 expert interviews per project, with competitor clients and physicians and summarized notes and insights related to prescription choice, future trends and unmet clinical needs in medical industry
 
 
 
