@@ -29,11 +29,34 @@ instacart =
 #### Clean the dataset
 
 ```{r}
-
-
-
+instacart_tidy = 
+  instacart %>% 
+  janitor::clean_names() %>%
+  mutate(
+    day = order_dow + 1,
+    order_day_of_week = lubridate::wday(day, label = TRUE)
+    ) %>%
+  select(order_id, user_id, reordered, order_day_of_week, order_hour_of_day, days_since_prior_order, product_name, aisle, department) %>%
+  drop_na()
 ```
 
 
 
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+First is a line plot shows the distributions of order time during a day.
+
+```{r}
+instacart_tidy %>%
+  group_by(order_day_of_week, order_hour_of_day) %>%
+  summarize(count = n_distinct(order_id)) %>%
+  plot_ly(x = ~order_hour_of_day, y = ~count, type = "scatter", mode = "lines",
+          color = ~order_day_of_week, alpha = 0.8) %>%
+  layout(title =  "Distributions of Order Time During a Day",
+         xaxis = list(title = "Time"),
+         yaxis = list(title = "Number of Orders"))
+```
 
