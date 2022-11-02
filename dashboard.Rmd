@@ -59,6 +59,7 @@ instacart_tidy %>%
          xaxis = list(title = "Time"),
          yaxis = list(title = "Number of Orders"))
 ```
+
 Column {data-width=350}
 -----------------------------------------------------------------------
 
@@ -71,18 +72,39 @@ aisle_10 = instacart_tidy %>%
   group_by(aisle) %>% 
   summarise(count = n()) %>% 
   mutate(aisle = str_to_title(aisle)) %>%
-  mutate(aisle = fct_reorder(aisle, -count)) %>%
   arrange(-count) %>% 
-  top_n(10)
+  top_n(10) 
+
 
 aisle_10 %>% 
+  mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar") %>%
   layout(title = "Number of Items Ordered in Top 10 Popular Aisles",
          xaxis = list(title = "Aisle"), 
          yaxis = list(title = "Number of items ordered"))
 ```
 
+Column {data-width=350}
+-----------------------------------------------------------------------
 
+### Chart C
+
+Third is a boxplot shows the distributions of order intervals in the top 10 popular aisles.
+
+```{r}
+aisle_name_10 = aisle_10 %>%
+  pull(aisle)
+
+instacart_tidy %>% 
+  mutate(aisle = str_to_title(aisle)) %>%
+  filter(aisle %in% aisle_name_10) %>%
+  mutate(aisle = fct_reorder(aisle, days_since_prior_order)) %>% 
+  plot_ly(x = ~aisle, y = ~days_since_prior_order, type = "box",
+          color = ~aisle, alpha = 0.5) %>% 
+  layout(title = "Distributions of Order Interval in the Top 10 Popular Aisles",
+         xaxis = list(title = "Aisle"),
+         yaxis = list(title = "Days Since Prior Order"))
+```
 
 
 
