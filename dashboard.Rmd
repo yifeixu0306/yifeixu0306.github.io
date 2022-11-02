@@ -70,16 +70,12 @@ Column {data-width=400}
 ### Chart B: Number of Items Ordered in the Top 10 Popular Aisles
 
 ```{r, message=FALSE}
-# Top 10 popular aisle
-aisle_10 = instacart_tidy %>%
+instacart_tidy %>%
   group_by(aisle) %>% 
   summarise(count = n()) %>% 
   mutate(aisle = str_to_title(aisle)) %>%
   arrange(-count) %>% 
-  top_n(10) 
-
-
-aisle_10 %>% 
+  top_n(10) %>%
   mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.7) %>%
   layout(xaxis = list(title = "Aisle"), 
@@ -88,27 +84,19 @@ aisle_10 %>%
 ```
 
 
-### Chart C: Distributions of Order Interval in the Top 10 Popular Products
+### Chart C: Distributions of Order Time in the Alcohol Department
 
 ```{r, message=FALSE}
-# Top 10 popular product
-product_10 = instacart_tidy %>%
-  group_by(product_name) %>% 
-  summarise(count = n()) %>% 
-  arrange(-count) %>% 
-  top_n(10) 
-
-product_name_10 = product_10 %>%
-  pull(product_name)
-
 instacart_tidy %>% 
-  filter(product_name %in% product_name_10) %>%
-  left_join(product_10, by = "product_name") %>%
-  mutate(product_name = fct_reorder(product_name, -count)) %>% 
-  plot_ly(x = ~product_name, y = ~days_since_prior_order, type = "box",
-          color = ~product_name, alpha = 0.6) %>% 
-  layout(xaxis = list(title = "Product Name"),
-         yaxis = list(title = "Days Since Prior Order")) %>%
+  filter(department == "alcohol") %>%
+  mutate(aisle = str_to_title(aisle)) %>%
+  plot_ly(x = ~aisle, y = ~order_hour_of_day, split = ~aisle, type = "box", 
+          color = ~aisle, alpha = 0.6) %>% 
+  layout(
+    xaxis = list(title = "Alcohol Type"),
+    yaxis = list(title = "Order Time", range = list(0,24), dtick = 3, 
+                      tickvals = c(0, 3, 6, 9, 12, 15, 18, 21, 24),
+                      ticktext = c("12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm", "12am"))) %>%
   hide_legend()
 
 
