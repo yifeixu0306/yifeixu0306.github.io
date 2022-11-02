@@ -81,7 +81,7 @@ aisle_10 = instacart_tidy %>%
 
 aisle_10 %>% 
   mutate(aisle = fct_reorder(aisle, -count)) %>%
-  plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
+  plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.7) %>%
   layout(xaxis = list(title = "Aisle"), 
          yaxis = list(title = "Number of Items Ordered")) %>%
   hide_legend()
