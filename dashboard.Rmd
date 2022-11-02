@@ -4,6 +4,11 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: fill
+    navbar:
+      - { title: "Home", href: index.html, align: right }
+      - { icon: fa-envelope, href: mailto:<yifeixu9836@gmail.com>, align: right }
+      - { icon: fa-github, href: "http://github.com/yifeixu0306/", align: right }
+      - { icon: fa-linkedin, href: "https://www.linkedin.com/in/yifei-xu-6190b6228/", align: right }
     source: embed
     theme: lumen
 ---
@@ -36,7 +41,7 @@ instacart_tidy =
     day = order_dow + 1,
     order_day_of_week = lubridate::wday(day, label = TRUE)
     ) %>%
-  select(order_id, user_id, reordered, order_day_of_week, order_hour_of_day, days_since_prior_order, product_name, aisle, department) %>%
+  select(order_id, user_id, order_day_of_week, order_hour_of_day, days_since_prior_order, product_name, aisle, department) %>%
   drop_na()
 ```
 
@@ -73,7 +78,7 @@ aisle_10 = instacart_tidy %>%
 
 aisle_10 %>% 
   mutate(aisle = fct_reorder(aisle, -count)) %>%
-  plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar") %>%
+  plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
   layout(title = "Number of Items Ordered in Top 10 Popular Aisles",
          xaxis = list(title = "Aisle"), 
          yaxis = list(title = "Number of items ordered"))
@@ -89,9 +94,10 @@ aisle_name_10 = aisle_10 %>%
 instacart_tidy %>% 
   mutate(aisle = str_to_title(aisle)) %>%
   filter(aisle %in% aisle_name_10) %>%
-  mutate(aisle = fct_reorder(aisle, days_since_prior_order)) %>% 
+  left_join(aisle_10, by = "aisle") %>%
+  mutate(aisle = fct_reorder(aisle, -count)) %>% 
   plot_ly(x = ~aisle, y = ~days_since_prior_order, type = "box",
-          color = ~aisle, alpha = 0.5) %>% 
+          color = ~aisle, alpha = 0.6) %>% 
   layout(title = "Distributions of Order Interval in the Top 10 Popular Aisles",
          xaxis = list(title = "Aisle"),
          yaxis = list(title = "Days Since Prior Order"))
