@@ -5,7 +5,9 @@ output:
     orientation: columns
     vertical_layout: fill
     source: embed
+    theme: lumen
 ---
+
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
@@ -14,11 +16,9 @@ library(p8105.datasets)
 library(plotly)
 ```
 
-### Insracart
-
-#### Read in the data
 
 ```{r}
+# Read in the data
 data("instacart")
 
 instacart = 
@@ -26,9 +26,9 @@ instacart =
   as_tibble(instacart)
 ```
 
-#### Clean the dataset
 
 ```{r}
+# Clean the dataset
 instacart_tidy = 
   instacart %>% 
   janitor::clean_names() %>%
@@ -41,13 +41,10 @@ instacart_tidy =
 ```
 
 
-
-Column {data-width=650}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart A
-
-First is a line plot shows the distributions of order time during a day.
 
 ```{r}
 instacart_tidy %>%
@@ -60,12 +57,10 @@ instacart_tidy %>%
          yaxis = list(title = "Number of Orders"))
 ```
 
-Column {data-width=350}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart B
-
-Second is a bar chart that shows the top 10 aisle with the greatest number of items ordered.
 
 ```{r}
 aisle_10 = instacart_tidy %>%
@@ -84,12 +79,8 @@ aisle_10 %>%
          yaxis = list(title = "Number of items ordered"))
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
 
 ### Chart C
-
-Third is a boxplot shows the distributions of order intervals in the top 10 popular aisles.
 
 ```{r}
 aisle_name_10 = aisle_10 %>%
@@ -104,6 +95,10 @@ instacart_tidy %>%
   layout(title = "Distributions of Order Interval in the Top 10 Popular Aisles",
          xaxis = list(title = "Aisle"),
          yaxis = list(title = "Days Since Prior Order"))
+```
+
+```{r}
+rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
 ```
 
 
