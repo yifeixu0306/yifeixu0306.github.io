@@ -5,7 +5,7 @@ output:
     orientation: columns
     vertical_layout: fill
     navbar:
-      - { title: "Home", href: index.html, align: right }
+      - { icon: fa-home, href: index.html, align: right }
       - { icon: fa-envelope, href: mailto:<yifeixu9836@gmail.com>, align: right }
       - { icon: fa-github, href: "http://github.com/yifeixu0306/", align: right }
       - { icon: fa-linkedin, href: "https://www.linkedin.com/in/yifei-xu-6190b6228/", align: right }
@@ -72,7 +72,8 @@ instacart_tidy %>%
          xaxis = list(title = "Time", range = list(0,24), dtick = 3, 
                       tickvals = c(0, 3, 6, 9, 12, 15, 18, 21, 24),
                       ticktext = c("12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm", "12am")),
-         yaxis = list(title = "Number of Orders"))
+         yaxis = list(title = "Number of Orders"),
+         legend = list(traceorder = "reversed"))
 ```
 
 Column {data-width=500}

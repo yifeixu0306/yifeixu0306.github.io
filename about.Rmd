@@ -11,6 +11,18 @@ output:
     font-size: 11.5pt}
 </style>
     
+<br>
+
+## Education
+
+**Columbia University, Mailman School of Public Health** [New York, NY]{style="float:right"}  
+*Master of Science, Biostatistics* [*May 2023*]{style="float:right"}  
+
+**Sichuan University** [Chengdu, China]{style="float:right"}  
+*Bachelor of Science, Major: Pharmaceutical Science* [*Jun 2020*]{style="float:right"}   
+*Bachelor of Management, Minor: Business Administration* [*Jun 2020*]{style="float:right"} 
+
+<hr />
 
 ## Academic Experience
 
@@ -27,7 +39,6 @@ output:
 * Retrieved postpartum hemorrhage cases between June 2018 and May 2019 and their diagnosis descriptions from patient database of West China Second Hospital
 *	Took the use of surgical methods (uterine binding, hysterectomy, etc.) to treat hemorrhage during delivery as the feature of uterotonics insensitivity, identified age, delivery mode, gestational age, parity, scarred uterus, polyhydramnios, placenta previa, etc. as potential high-risk factors, used SAS to perform logistic regression analysis to determine significant predictors
 *	Constructed a predictive model for uterotonics insensitivity in patients with postpartum hemorrhage, and conducted model diagnostics and validation
-
 
 <hr />
 
@@ -47,5 +58,9 @@ output:
 * Retrieved industry information through multiple platforms such as literature and databases, proficient in using Excel (v-lookup function, pivot table, thinkcell, etc.) for quantitative data analysis and visualization, and completed project delivery slides
 * Designed interview questionnaires, participated in 10 - 20 expert interviews per project, with competitor clients and physicians and summarized notes and insights related to prescription choice, future trends and unmet clinical needs in medical industry
 
+<hr />
 
+## Skills
+**Computer Skills**: Microsoft Office Suite, R, SAS (Advance Certification), SQL, SPSS  
+**Language Skills**: Mandarin (native), English (proficient)
 
