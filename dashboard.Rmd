@@ -22,7 +22,7 @@ library(plotly)
 ```
 
 
-```{r}
+```{r, message=FALSE}
 # Read in the data
 data("instacart")
 
@@ -32,7 +32,7 @@ instacart =
 ```
 
 
-```{r}
+```{r, message=FALSE}
 # Clean the dataset
 instacart_tidy = 
   instacart %>% 
@@ -43,17 +43,6 @@ instacart_tidy =
     ) %>%
   select(order_id, user_id, order_day_of_week, order_hour_of_day, days_since_prior_order, product_name, aisle, department) %>%
   drop_na()
-
-# Top 10 popular aisle
-aisle_10 = instacart_tidy %>%
-  group_by(aisle) %>% 
-  summarise(count = n()) %>% 
-  mutate(aisle = str_to_title(aisle)) %>%
-  arrange(-count) %>% 
-  top_n(10) 
-
-aisle_name_10 = aisle_10 %>%
-  pull(aisle)
 ```
 
 
@@ -62,7 +51,7 @@ Column {data-width=600}
 
 ### Chart A: Distributions of Order Time During a Day
 
-```{r}
+```{r, message=FALSE}
 instacart_tidy %>%
   group_by(order_day_of_week, order_hour_of_day) %>%
   summarize(count = n_distinct(order_id)) %>%
@@ -80,7 +69,16 @@ Column {data-width=400}
 
 ### Chart B: Number of Items Ordered in the Top 10 Popular Aisles
 
-```{r}
+```{r, message=FALSE}
+# Top 10 popular aisle
+aisle_10 = instacart_tidy %>%
+  group_by(aisle) %>% 
+  summarise(count = n()) %>% 
+  mutate(aisle = str_to_title(aisle)) %>%
+  arrange(-count) %>% 
+  top_n(10) 
+
+
 aisle_10 %>% 
   mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
@@ -90,21 +88,31 @@ aisle_10 %>%
 ```
 
 
-### Chart C: Distributions of Order Interval in the Top 10 Popular Aisles
+### Chart C: Distributions of Order Interval in the Top 10 Popular Products
 
-```{r}
+```{r, message=FALSE}
+# Top 10 popular product
+product_10 = instacart_tidy %>%
+  group_by(product_name) %>% 
+  summarise(count = n()) %>% 
+  arrange(-count) %>% 
+  top_n(10) 
+
+product_name_10 = product_10 %>%
+  pull(product_name)
+
 instacart_tidy %>% 
-  mutate(aisle = str_to_title(aisle)) %>%
-  filter(aisle %in% aisle_name_10) %>%
-  left_join(aisle_10, by = "aisle") %>%
-  mutate(aisle = fct_reorder(aisle, -count)) %>% 
-  plot_ly(x = ~aisle, y = ~days_since_prior_order, type = "box",
-          color = ~aisle, alpha = 0.6) %>% 
-  layout(xaxis = list(title = "Aisle"),
+  filter(product_name %in% product_name_10) %>%
+  left_join(product_10, by = "product_name") %>%
+  mutate(product_name = fct_reorder(product_name, -count)) %>% 
+  plot_ly(x = ~product_name, y = ~days_since_prior_order, type = "box",
+          color = ~product_name, alpha = 0.6) %>% 
+  layout(xaxis = list(title = "Product Name"),
          yaxis = list(title = "Days Since Prior Order")) %>%
   hide_legend()
-```
 
+
+```
 
 
 
