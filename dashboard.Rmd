@@ -103,9 +103,7 @@ instacart_tidy %>%
          yaxis = list(title = "Days Since Prior Order"))
 ```
 
-```{r}
-rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
-```
+
 
 
 
