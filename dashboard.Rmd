@@ -60,7 +60,7 @@ aisle_name_10 = aisle_10 %>%
 Column {data-width=500}
 -----------------------------------------------------------------------
 
-### Chart A
+### Chart A: Distributions of Order Time During a Day
 
 ```{r}
 instacart_tidy %>%
@@ -68,8 +68,7 @@ instacart_tidy %>%
   summarize(count = n_distinct(order_id)) %>%
   plot_ly(x = ~order_hour_of_day, y = ~count, type = "scatter", mode = "lines",
           color = ~order_day_of_week, alpha = 0.8) %>%
-  layout(title =  "Distributions of Order Time During a Day",
-         xaxis = list(title = "Time", range = list(0,24), dtick = 3, 
+  layout(xaxis = list(title = "Time", range = list(0,24), dtick = 3, 
                       tickvals = c(0, 3, 6, 9, 12, 15, 18, 21, 24),
                       ticktext = c("12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm", "12am")),
          yaxis = list(title = "Number of Orders"),
@@ -79,19 +78,18 @@ instacart_tidy %>%
 Column {data-width=500}
 -----------------------------------------------------------------------
 
-### Chart B
+### Chart B: Number of Items Ordered in the Top 10 Popular Aisles
 
 ```{r}
 aisle_10 %>% 
   mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
-  layout(title = "Number of Items Ordered in the Top 10 Popular Aisles",
-         xaxis = list(title = "Aisle"), 
-         yaxis = list(title = "Number of items ordered"))
+  layout(xaxis = list(title = "Aisle"), 
+         yaxis = list(title = "Number of Items Ordered"))
 ```
 
 
-### Chart C
+### Chart C: Distributions of Order Interval in the Top 10 Popular Aisles
 
 ```{r}
 instacart_tidy %>% 
@@ -101,8 +99,7 @@ instacart_tidy %>%
   mutate(aisle = fct_reorder(aisle, -count)) %>% 
   plot_ly(x = ~aisle, y = ~days_since_prior_order, type = "box",
           color = ~aisle, alpha = 0.6) %>% 
-  layout(title = "Distributions of Order Interval in the Top 10 Popular Aisles",
-         xaxis = list(title = "Aisle"),
+  layout(xaxis = list(title = "Aisle"),
          yaxis = list(title = "Days Since Prior Order"))
 ```
 
