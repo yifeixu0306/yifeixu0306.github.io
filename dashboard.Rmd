@@ -57,7 +57,7 @@ aisle_name_10 = aisle_10 %>%
 ```
 
 
-Column {data-width=500}
+Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### Chart A: Distributions of Order Time During a Day
@@ -75,7 +75,7 @@ instacart_tidy %>%
          legend = list(traceorder = "reversed"))
 ```
 
-Column {data-width=500}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart B: Number of Items Ordered in the Top 10 Popular Aisles
@@ -85,7 +85,8 @@ aisle_10 %>%
   mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
   layout(xaxis = list(title = "Aisle"), 
-         yaxis = list(title = "Number of Items Ordered"))
+         yaxis = list(title = "Number of Items Ordered")) %>%
+  hide_legend()
 ```
 
 
@@ -100,7 +101,8 @@ instacart_tidy %>%
   plot_ly(x = ~aisle, y = ~days_since_prior_order, type = "box",
           color = ~aisle, alpha = 0.6) %>% 
   layout(xaxis = list(title = "Aisle"),
-         yaxis = list(title = "Days Since Prior Order"))
+         yaxis = list(title = "Days Since Prior Order")) %>%
+  hide_legend()
 ```
 
 
