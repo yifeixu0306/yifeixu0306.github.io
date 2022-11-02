@@ -43,6 +43,17 @@ instacart_tidy =
     ) %>%
   select(order_id, user_id, order_day_of_week, order_hour_of_day, days_since_prior_order, product_name, aisle, department) %>%
   drop_na()
+
+# Top 10 popular aisle
+aisle_10 = instacart_tidy %>%
+  group_by(aisle) %>% 
+  summarise(count = n()) %>% 
+  mutate(aisle = str_to_title(aisle)) %>%
+  arrange(-count) %>% 
+  top_n(10) 
+
+aisle_name_10 = aisle_10 %>%
+  pull(aisle)
 ```
 
 
@@ -58,7 +69,9 @@ instacart_tidy %>%
   plot_ly(x = ~order_hour_of_day, y = ~count, type = "scatter", mode = "lines",
           color = ~order_day_of_week, alpha = 0.8) %>%
   layout(title =  "Distributions of Order Time During a Day",
-         xaxis = list(title = "Time"),
+         xaxis = list(title = "Time", range = list(0,24), dtick = 3, 
+                      tickvals = c(0, 3, 6, 9, 12, 15, 18, 21, 24),
+                      ticktext = c("12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm", "12am")),
          yaxis = list(title = "Number of Orders"))
 ```
 
@@ -68,14 +81,6 @@ Column {data-width=500}
 ### Chart B
 
 ```{r}
-aisle_10 = instacart_tidy %>%
-  group_by(aisle) %>% 
-  summarise(count = n()) %>% 
-  mutate(aisle = str_to_title(aisle)) %>%
-  arrange(-count) %>% 
-  top_n(10) 
-
-
 aisle_10 %>% 
   mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
@@ -88,9 +93,6 @@ aisle_10 %>%
 ### Chart C
 
 ```{r}
-aisle_name_10 = aisle_10 %>%
-  pull(aisle)
-
 instacart_tidy %>% 
   mutate(aisle = str_to_title(aisle)) %>%
   filter(aisle %in% aisle_name_10) %>%
