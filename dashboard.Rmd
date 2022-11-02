@@ -85,7 +85,7 @@ Column {data-width=500}
 aisle_10 %>% 
   mutate(aisle = fct_reorder(aisle, -count)) %>%
   plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar", alpha = 0.6) %>%
-  layout(title = "Number of Items Ordered in Top 10 Popular Aisles",
+  layout(title = "Number of Items Ordered in the Top 10 Popular Aisles",
          xaxis = list(title = "Aisle"), 
          yaxis = list(title = "Number of items ordered"))
 ```

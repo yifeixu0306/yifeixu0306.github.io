@@ -15,7 +15,7 @@ output:
     font-size: 12pt}
 </style>
     
-<img src="images/me.JPG" style = "width:50%"/>
+<img src="images/me.JPG" style = "width:70%"/>
 
 **Welcome to my website!**
 
