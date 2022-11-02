@@ -59,4 +59,30 @@ instacart_tidy %>%
          xaxis = list(title = "Time"),
          yaxis = list(title = "Number of Orders"))
 ```
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+Second is a bar chart that shows the top 10 aisle with the greatest number of items ordered.
+
+```{r}
+aisle_10 = instacart_tidy %>%
+  group_by(aisle) %>% 
+  summarise(count = n()) %>% 
+  mutate(aisle = str_to_title(aisle)) %>%
+  mutate(aisle = fct_reorder(aisle, -count)) %>%
+  arrange(-count) %>% 
+  top_n(10)
+
+aisle_10 %>% 
+  plot_ly(x = ~aisle, y = ~count, color = ~aisle, type = "bar") %>%
+  layout(title = "Number of Items Ordered in Top 10 Popular Aisles",
+         xaxis = list(title = "Aisle"), 
+         yaxis = list(title = "Number of items ordered"))
+```
+
+
+
+
 
